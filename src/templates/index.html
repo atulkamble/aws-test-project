@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f0f9ff;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #2563eb;
+      margin-bottom: 1.5rem;
+    }
+    button {
+      padding: 0.6rem 2rem;
+      font-size: 1rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <h1 id="message">Hello, World!</h1>
+  <button onclick="handleClick()">Click Me</button>
+
+  <script>
+    async function handleClick() {
+      const res = await fetch('/click', { method: 'POST' });
+      const data = await res.json();
+      document.getElementById('message').textContent = data.message;
+    }
+  </script>
+</body>
+</html>
