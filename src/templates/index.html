@@ -20,6 +20,14 @@
       color: #2563eb;
       margin-bottom: 1.5rem;
     }
+    .server-info {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-bottom: 1.5rem;
+      background: #e0f2fe;
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+    }
     button {
       padding: 0.6rem 2rem;
       font-size: 1rem;
@@ -34,6 +42,7 @@
 </head>
 <body>
   <h1 id="message">Hello, World!</h1>
+  <p class="server-info">Server: <strong>{{ server_name }}</strong></p>
   <button onclick="handleClick()">Click Me</button>
 
   <script>

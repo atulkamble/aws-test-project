@@ -1,3 +1,4 @@
+import socket
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -5,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", server_name=socket.gethostname())
 
 
 @app.route("/click", methods=["POST"])
